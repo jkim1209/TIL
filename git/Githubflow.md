@@ -9,7 +9,7 @@
 |3.원격 설정        |`git remote add upstream {team-repo-address}`              |
 |4.로컬 브랜치 생성  |`git branch {branch-name}` & `git switch {branch-name}`   |
 |5.작업 & 커밋      |`git add {file-name}` & `git commit`                       |
-|(6.로컬 병합)      |`git switch origin` → `git merge {branch-name}             |
+|(6.로컬 병합)      |`git switch origin` → `git merge {branch-name}`            |
 |7.push            |`git push origin main` <br> (6.로컬 병합 안했다면 최초에는 `git push -u origin {branch-name}` <br> 이후 `git push origin {branch-name}`)   |
 |8.PR생성           |GitHub 웹에서 `Compare & pull request` 클릭 <br> `base: {받을 upstream branch} ← compare: {보낼 origin branch}`    |
 
