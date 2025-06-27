@@ -17,7 +17,7 @@
 
 ## 기타
 * PR생성 후 code review결과 추가 작업사항은 main 말고 열려있는 branch에서 작업 후 commit (위의 4,5,6,7 중 필요한 단계 반복)        
-
+* Fork 없이 협업 repo를 그대로 내 local에 clone한 경우 별도 upstream은 없음 (origin) → 이 때는 반드시 branch를 push할 것 (6.로컬 병합 생략)
 * upstream branch를 로컬로 업데이트할 때 명령어      
     * git fetch upstream main       
     * git merge upsteram/main       
