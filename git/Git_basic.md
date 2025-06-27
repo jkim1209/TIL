@@ -1,5 +1,5 @@
 # Git 기본용어
-> main: 깃의 기본 브랜츠    
+> main: 깃의 기본 브랜치    
 > origin: 깃의 기본 원격 브랜치 별칭    
 > HEAD: 현재 작업 브랜치 위치   
     
@@ -32,7 +32,7 @@ $ git log                   # 버전관리 이력 확인 (--pretty=oneline: 한 
 ```bash
 $ git branch                    # 로컬브랜치 목록보기
 $ git branch -r                 # 원격브랜치 목록보기 (e.g. origin/HEAD -> origin/main : 원격저장소 origin의 기본(HEAD)브랜치는 main브랜치임을 의미)
-$ git branch -a                 # 전체브랜치 목록보
+$ git branch -a                 # 전체브랜치 목록보기
 $ git branch {branchname}       # 브랜치 생성하기
 $ git switch {branchname}       # 해당 브랜치로 이동하기 - 기존 작업공간의 파일들 모두 있으나, 이제부턴 독립된 공간
 $ git merge {branchname}        # (머지할 공간으로 다시 switch해온 후 실행) 해당 브랜치를 현재 공간의 브랜치에 머지하기
@@ -86,7 +86,6 @@ $ git commit        # docs: Update README.md with modified usage instructions
 # 6. main 브랜치에 병합
 $ git switch main
 $ git merge function-modify     # if CONFLICT → 파일 들어가서 수동 해결 후 add, commit
-
 
 # 7. main 브랜치를 원격 저장소에 푸시
 $ git push origin main
