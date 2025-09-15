@@ -1,6 +1,6 @@
 # Algorithm Study for Coding Test
 
-This folder contains algorithm problem sorted by date for coding test prep.
+Daily solution folder contains algorithm problem sorted by date for coding test prep.
 Each `.py` file named by date includes problem links, my solutions, notes, etc.
 
 ## Language
