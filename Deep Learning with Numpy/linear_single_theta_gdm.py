@@ -7,11 +7,17 @@ def linear_single_theta_gdm(x, y, theta=1, rate=0.1, epochs=100, graph_on=True):
     Returns theta that explains linear relationship y = theta * x
     after updating epochs times using gadient descent method.
     
-    x, y        :   list of x, y
-    theta       :   initial theta (default = 1)
-    rate        :   initial learning rate (default = 0.1)
-    epochs      :   repetition (default = 100)
-    graph_on    :   visualize theta and loss for each epoch (default=True)
+    Args:
+        x (list)        :   list of x values
+        y (list)        :   list of y values
+        theta (float)   :   initial theta, default is 1
+        rate (float)    :   initial learning rate, default is 0.1
+        epochs (int)    :   number of iteration, default is 100
+        graph_on (bool) :   visualize theta and loss for each epoch, default is True
+
+    Returns:
+        theta_list: list of updated learning rates
+        loss_lost: list of updated squared errors
     """
     theta_list = []
     loss_list = []
@@ -38,6 +44,8 @@ def linear_single_theta_gdm(x, y, theta=1, rate=0.1, epochs=100, graph_on=True):
         plt.tight_layout()
         plt.show()
 
+    return theta_list, loss_list
+
 
 if __name__ == '__main__':
     x = np.array([1, 0.5, 3])
@@ -45,4 +53,7 @@ if __name__ == '__main__':
     theta = 0.1
     rate = 0.01
     epochs = 50
-    linear_single_theta_gdm(x, y, theta, rate, epochs, graph_on=True)
+    theta_list, loss_list = linear_single_theta_gdm(x, y, theta, rate, epochs, graph_on=True)
+    print(theta_list)
+    print(loss_list)
+    
