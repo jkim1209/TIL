@@ -180,13 +180,15 @@ Attention은 디코더의 모든 시점마다 수행됩니다. 즉, 각 단어�
 
 ---
 
-## 7. 요약
+## 7. 요약: Encoder + Attention을 포함한 Decoder 메커니즘의 전체 흐름
 
-1. Encoder는 입력 문장을 처리해 hidden states $(hs_1, \dots, hs_T)$ 생성
-2. Decoder는 시점마다 hidden state $h_i$와 context vector $c_i$를 이용해 단어를 생성
-3. Attention Score을 계산
-4. Attention Weight는 softmax로 정규화
-5. Context Vector는 가중합으로 계산
+1. Encoder는 입력 문장을 받아 모든 시점의 Hidden States ($H$)를 생성합니다. 이는 디코더가 참고할 정보의 원천이 됩니다.
+2. Decoder는 $i$번째 단어를 예측하기 위해 현재까지의 요약 정보인 Hidden State ($s_i$)를 가집니다. 이는 '어떤 정보가 필요한가?'라는 질문(Query) 역할을 합니다.
+3. Attention을 이용한 정보 선별**:
+      * **a. Score 계산**: 디코더의 질문($s_i$)과 인코더의 모든 정보($H$)를 비교하여 **Attention Score**를 계산합니다.
+      * **b. Weight 계산**: Score를 Softmax로 정규화하여 집중할 비율인 **Attention Weight**를 얻습니다.
+      * **c. Context Vector 생성**: Weight를 이용해 $H$를 가중합하여, 현재 질문에 가장 적합한 맞춤형 정보인 Context Vector ($c_i$)를 만듭니다.
+4. Decoder, 단어 예측: Decoder는 자신의 상태($s_i$)와 어텐션을 통해 얻은 맞춤형 정보($c_i$)를 **결합**하여 최종적으로 $i$번째 단어($y_i$)를 출력합니다.
 
 ---
 
