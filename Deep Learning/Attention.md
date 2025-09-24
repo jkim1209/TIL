@@ -73,7 +73,7 @@ flowchart
 
 이렇게 하면 인코더의 출력은 더 이상 고정된 크기의 벡터 하나가 아니라, 입력 문장의 길이에 따라 크기가 결정되는 **Hidden State들의 시퀀스(또는 행렬) $H$** 가 됩니다.
 
-<img src="img/attention_encoder.png" width="500" alt="Encoder 출력">
+![Encoder 출력](img/attention_encoder.png)
 
 * 위 그림처럼, 각 단어($x_t$)가 인코더를 거쳐 해당 시점까지의 정보를 요약한 $h_t$ (Hidden State) 벡터를 출력합니다.
 * 인코더는 이 Hidden State 벡터($h1$, $h2$, $h3$, $h4$) 전체를 디코더로 전달합니다.
@@ -141,7 +141,7 @@ $$
 
 위 4.1 부터 4.3까지의 과정, 즉 한 번의 Attention이 계산되는 과정을 그림으로 표현하면 다음과 같습니다.
 
-<center><img src="img/attention_contextvector.png" width="300" alt="Context Vector 계산"></center>
+![Context Vector 계산](img/attention_contextvector.png)
 
 ## 5. Attention을 포함한 Decoder
 
