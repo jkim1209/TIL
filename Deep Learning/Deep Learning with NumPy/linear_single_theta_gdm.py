@@ -5,7 +5,7 @@ plt.style.use('seaborn-v0_8')
 def linear_single_theta_gdm(x, y, theta=1, rate=0.1, epochs=100, graph_on=True):
     """
     Returns theta that explains linear relationship y = theta * x
-    after updating epochs times using gadient descent method.
+    after updating epochs times using gradient descent method.
     
     Args:
         x (list)        :   list of x values
