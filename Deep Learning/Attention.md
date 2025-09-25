@@ -2,7 +2,7 @@
 
 ## 1. Seq2Seq 기본 아이디어
 
-Seq2Seq(Sequence-to-Sequence) 모델은 시계열 데이터인 입력 시퀀스(e.g., 문장)를 받아 출력 시퀀스(e.g., 번역 결과 등)로 변환하는 신경망 구조로, 핵심 구조를 살펴보면 다음과 같습니다다.
+Seq2Seq(Sequence-to-Sequence) 모델은 시계열 데이터인 입력 시퀀스(e.g., 문장)를 받아 출력 시퀀스(e.g., 번역 결과 등)로 변환하는 신경망 구조로, 핵심 구조를 살펴보면 다음과 같습니다.
 
 1. Encoder: 입력 문장을 단어 단위로 처리하여 hidden state를 생성.
 2. Context Vector: 인코더의 정보를 요약해 디코더로 전달.
@@ -188,12 +188,12 @@ Attention은 디코더의 모든 시점마다 수행됩니다. 즉, 각 단어�
 
 ## 7. 요약: Encoder + Attention을 포함한 Decoder 메커니즘의 전체 흐름
 
-1. Encoder는 입력 문장을 받아 모든 시점의 Hidden States ($H$)를 생성합니다. 이는 디코더가 참고할 정보의 원천이 됩니다.
+1. Encoder는 입력 문장을 받아 모든 시점의 Hidden States ($H$)를 생성합니다. 이는 디코더가 참고할 정보의 원천(각 Key $h_j$ 들의 집합)이 됩니다.
 2. Decoder는 $i$번째 단어를 예측하기 위해 현재까지의 요약 정보인 Hidden State ($s_i$)를 가집니다. 이는 '어떤 정보가 필요한가?'라는 질문(Query) 역할을 합니다.
-3. Attention을 이용한 정보 선별**:
-      * **a. Score 계산**: 디코더의 질문($s_i$)과 인코더의 모든 정보($H$)를 비교하여 **Attention Score**를 계산합니다.
-      * **b. Weight 계산**: Score를 Softmax로 정규화하여 집중할 비율인 **Attention Weight**를 얻습니다.
-      * **c. Context Vector 생성**: Weight를 이용해 $H$를 가중합하여, 현재 질문에 가장 적합한 맞춤형 정보인 Context Vector ($c_i$)를 만듭니다.
+3. Attention을 이용한 정보 선별:
+      * **Attention Score 계산**: 디코더의 질문($s_i$)과 인코더의 모든 정보($H$)를 비교하여 **Attention Score**를 계산합니다.
+      * **Attention Weight 계산**: Score를 Softmax로 정규화하여 집중할 비율인 **Attention Weight**를 얻습니다.
+      * **Context Vector 생성**: Weight를 이용해 각 $h_j$를 가중합하여, 현재 질문에 가장 적합한 맞춤형 정보인 Context Vector ($c_i$)를 만듭니다.
 4. Decoder, 단어 예측: Decoder는 자신의 상태($s_i$)와 어텐션을 통해 얻은 맞춤형 정보($c_i$)를 **결합**하여 최종적으로 $i$번째 단어($y_i$)를 출력합니다.
 
 ---
